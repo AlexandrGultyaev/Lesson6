@@ -1,0 +1,139 @@
+using System;
+
+namespace Lesson_6Task1
+{
+    class Program
+    {
+        enum DayOfWeek { MON, TUE, WED, THU, FRI, SAT, SUN };
+
+       
+        static void PrintDayOfWeek(DayOfWeek dow)
+        {
+           
+            switch (dow)
+            {
+                case DayOfWeek.MON:
+                    Console.WriteLine("Понедельник");
+                    break;
+                case DayOfWeek.TUE:
+                    Console.WriteLine("Вторник");
+                    break;
+                case DayOfWeek.WED:
+                    Console.WriteLine("Среда");
+                    break;
+                case DayOfWeek.THU:
+                    Console.WriteLine("Четверг");
+                    break;
+                case DayOfWeek.FRI:
+                    Console.WriteLine("Пятница");
+                    break;
+                case DayOfWeek.SAT:
+                    Console.WriteLine("Суббота");
+                    break;
+                case DayOfWeek.SUN:
+                    Console.WriteLine("Всокресенье");
+                    break;
+            }
+        }
+
+        
+        static DayOfWeek ReadDayOfWeek()
+        {
+            int day;
+            day = int.Parse(Console.ReadLine());
+            DayOfWeek dow = DayOfWeek.MON;
+            switch(day)
+            {
+                case 1:
+                    dow = DayOfWeek.MON;
+                    break;
+                case 2:
+                    dow = DayOfWeek.TUE;
+                    break;
+                case 3:
+                    dow = DayOfWeek.WED;
+                    break;
+                case 4:
+                    dow = DayOfWeek.THU;
+                    break;
+                case 5:
+                    dow = DayOfWeek.FRI;
+                    break;
+                case 6:
+                    dow = DayOfWeek.SAT;
+                    break;
+                case 7:
+                    dow = DayOfWeek.SUN;
+                    break;
+            }
+            return dow;
+        }
+        static void Main()
+        { 
+            DayOfWeek dow = ReadDayOfWeek();
+            PrintDayOfWeek(dow);
+           
+
+        }
+    }
+}
+
+
+/*Lesson2*/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Lesson_6Task2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите натуральные числа a и N");
+            int a = int.Parse(Console.ReadLine());
+            int N = int.Parse(Console.ReadLine());
+            int result = a;
+            for (int i = 1; i<=N; i++)
+            {
+                result++;
+            }
+            IEnumerable<int> seq;
+            seq = System.Linq.Enumerable.Range(a, N);
+            foreach (var x in seq)
+                Console.WriteLine($"{x} ");
+        }
+    }
+}
+
+/*Lesson3*/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Lesson_6Task2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = 1;
+            int b = 9;
+            int result = 0;
+            for (int i = 1; i <= b; i++)
+            {
+                result+=2;
+            }
+            IEnumerable<int> seq;
+            seq = System.Linq.Enumerable.Range(a, result);
+            foreach (var x in seq)
+                if (x%2!=0)
+                {
+                    Console.WriteLine($"{x} ");
+                }
+
+        }
+    }
+}
